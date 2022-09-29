@@ -44,7 +44,14 @@ class Warehouse:
 
 	# Returns the item in the warehouse with the most stock		
 	def get_max_stock(self):
-		pass
+		max_stock = 0
+		max_item = Item("item", 0, 0)
+		for item in self.items:
+			if item.stock > max_stock: 
+				max_stock = item.stock
+				max_item = item
+				
+		return max_item
 
 	
 	# Returns the item in the warehouse with the highest price
